@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WalkTech | FAQ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-laptop-code"></i><h1>WalkTech <span>Support</span></h1></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li><li><a href="faq.html">FAQ</a></li>
+            <li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+            <li><a href="#" id="openLoginModalBtn" class="login-btn"><i class="fas fa-user-circle"></i> Login</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2 class="section-title"><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+        <div class="faq-list">
+            <div class="faq-item active"><div class="faq-question">How long does a typical repair take? <i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Hardware: 1-3 days, Software: within 24 hours.</p></div></div>
+            <div class="faq-item"><div class="faq-question">Do you offer on-site repair services? <i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Yes, within Mbarara and surrounding areas.</p></div></div>
+            <div class="faq-item"><div class="faq-question">What brands do you support? <i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>HP, Dell, Lenovo, Apple MacBooks, Acer, Asus.</p></div></div>
+            <div class="faq-item"><div class="faq-question">Warranty on repairs? <i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>30-day warranty on hardware, 14 days on software.</p></div></div>
+            <div class="faq-item"><div class="faq-question">How to schedule a repair? <i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Contact form or call us. Quick response guaranteed.</p></div></div>
+        </div>
+    </div>
+    <div id="loginModal" class="modal"><div class="modal-content"><span class="close-modal">&times;</span><i class="fas fa-user-lock" style="font-size: 2.5rem;"></i><h3>Login</h3><form id="loginFormModal"><input type="text" placeholder="Email" required><input type="password" required><button type="submit" class="btn">Login</button></form><div class="demo-note">Demo access</div></div></div>
+    <footer><p>&copy; 2025 WalkTech | Answers to your questions</p></footer>
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const q = item.querySelector('.faq-question');
+            q.addEventListener('click', () => { item.classList.toggle('active'); });
+        });
+        const modal = document.getElementById('loginModal'), openBtn = document.getElementById('openLoginModalBtn'), closeBtn = document.querySelector('.close-modal');
+        openBtn?.addEventListener('click', (e) => { e.preventDefault(); modal.style.display = 'flex'; });
+        closeBtn?.addEventListener('click', () => { modal.style.display = 'none'; });
+        window.addEventListener('click', (e) => { if(e.target === modal) modal.style.display = 'none'; });
+        document.getElementById('loginFormModal')?.addEventListener('submit', (e) => { e.preventDefault(); alert('Demo login'); modal.style.display = 'none'; });
+    </script>
+</body>
+</html>

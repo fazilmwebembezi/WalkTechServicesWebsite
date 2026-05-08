@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WalkTech | Our Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-laptop-code"></i><h1>WalkTech <span>Computer Services</span></h1></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li><li><a href="faq.html">FAQ</a></li>
+            <li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+            <li><a href="#" id="openLoginModalBtn" class="login-btn"><i class="fas fa-user-circle"></i> Login</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2 class="section-title"><i class="fas fa-tools"></i> Our Computer Repair Services</h2>
+        <div class="services-grid">
+            <div class="service-card"><i class="fas fa-microchip"></i><h3>Hardware Repair</h3><p>Screen, motherboard, keyboard, battery replacement.</p></div>
+            <div class="service-card"><i class="fas fa-software"></i><h3>Software Solutions</h3><p>OS install, virus removal, driver updates.</p></div>
+            <div class="service-card"><i class="fas fa-database"></i><h3>Data Recovery</h3><p>Recover lost files from damaged drives.</p></div>
+            <div class="service-card"><i class="fas fa-network-wired"></i><h3>Networking Setup</h3><p>WiFi, office network, printer sharing.</p></div>
+            <div class="service-card"><i class="fas fa-shield-alt"></i><h3>IT Support</h3><p>Remote help & maintenance contracts.</p></div>
+            <div class="service-card"><i class="fas fa-charging-station"></i><h3>Upgrades</h3><p>RAM, SSD upgrades & cleaning.</p></div>
+        </div>
+    </div>
+    <!-- Login Modal (same as home) -->
+    <div id="loginModal" class="modal"><div class="modal-content"><span class="close-modal">&times;</span><i class="fas fa-user-lock" style="font-size: 2.5rem;"></i><h3>Customer Login</h3><form id="loginFormModal"><input type="text" id="loginUsername" placeholder="Email" required><input type="password" id="loginPassword" required><button type="submit" class="btn">Login</button></form><div class="demo-note">Demo: any credentials</div></div></div>
+    <footer><p>&copy; 2025 WalkTech — Quality Repairs</p></footer>
+    <script>
+        const modal = document.getElementById('loginModal'), openBtn = document.getElementById('openLoginModalBtn'), closeBtn = document.querySelector('.close-modal');
+        openBtn?.addEventListener('click', (e) => { e.preventDefault(); modal.style.display = 'flex'; });
+        closeBtn?.addEventListener('click', () => { modal.style.display = 'none'; });
+        window.addEventListener('click', (e) => { if(e.target === modal) modal.style.display = 'none'; });
+        document.getElementById('loginFormModal')?.addEventListener('submit', (e) => { e.preventDefault(); alert('Demo login'); modal.style.display = 'none'; });
+    </script>
+</body>
+</html>

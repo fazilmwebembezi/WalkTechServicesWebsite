@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WalkTech | About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-laptop-code"></i><h1>WalkTech <span>About</span></h1></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li><li><a href="faq.html">FAQ</a></li>
+            <li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+            <li><a href="#" id="openLoginModalBtn" class="login-btn"><i class="fas fa-user-circle"></i> Login</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2 class="section-title"><i class="fas fa-building"></i> About WalkTech</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p><strong>WalkTech Computer Services</strong> is based in Mbarara, Uganda, dedicated to providing fast, reliable, and affordable computer repair and IT support. We serve students, businesses, and organizations.</p>
+                <p>Our team holds years of experience in hardware repair, software troubleshooting, networking, and data recovery. We believe in transparency, fair pricing, and excellent customer support.</p>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> P.O BOX 1410 Mbarara, Uganda — Near MUST main gate.</p>
+                <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +256 771 234 567 &nbsp;|&nbsp; <i class="fab fa-whatsapp"></i> +256 702 345 678</p>
+            </div>
+            <div class="about-highlight">
+                <i class="fas fa-medal" style="font-size: 3rem; color:#4ecdc4;"></i>
+                <h3>Why Us?</h3>
+                <p>✔ Fast Turnaround<br>✔ Affordable Rates<br>✔ Certified Experts<br>✔ Free Diagnostics</p>
+            </div>
+        </div>
+    </div>
+    <div id="loginModal" class="modal"><div class="modal-content"><span class="close-modal">&times;</span><i class="fas fa-user-lock" style="font-size: 2.5rem;"></i><h3>Login</h3><form id="loginFormModal"><input type="text" placeholder="Email" required><input type="password" required><button type="submit" class="btn">Login</button></form><div class="demo-note">Demo credentials</div></div></div>
+    <footer><p>&copy; 2025 WalkTech Computer Services | Trusted in Mbarara</p></footer>
+    <script>
+        const modal = document.getElementById('loginModal'), openBtn = document.getElementById('openLoginModalBtn'), closeBtn = document.querySelector('.close-modal');
+        openBtn?.addEventListener('click', (e) => { e.preventDefault(); modal.style.display = 'flex'; });
+        closeBtn?.addEventListener('click', () => { modal.style.display = 'none'; });
+        window.addEventListener('click', (e) => { if(e.target === modal) modal.style.display = 'none'; });
+        document.getElementById('loginFormModal')?.addEventListener('submit', (e) => { e.preventDefault(); alert('Login demo'); modal.style.display = 'none'; });
+    </script>
+</body>
+</html>
